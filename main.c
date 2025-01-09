@@ -273,7 +273,9 @@ int main()
 							changedCellsCounter++;
 
 							changedCells_x = (int*)realloc(changedCells_x, changedCellsCounter * sizeof(int));
+							if (!changedCells_x) exit(EXIT_FAILURE);
 							changedCells_y = (int*)realloc(changedCells_y, changedCellsCounter * sizeof(int));
+							if (!changedCells_y) exit(EXIT_FAILURE);
 
 							changedCells_x[changedCellsCounter - 1] = j;
 							changedCells_y[changedCellsCounter - 1] = i;
@@ -286,7 +288,9 @@ int main()
 							changedCellsCounter++;
 
 							changedCells_x = (int*)realloc(changedCells_x, changedCellsCounter * sizeof(int));
+							if (!changedCells_x) exit(EXIT_FAILURE);
 							changedCells_y = (int*)realloc(changedCells_y, changedCellsCounter * sizeof(int));
+							if (!changedCells_y) exit(EXIT_FAILURE);
 
 							changedCells_x[changedCellsCounter - 1] = j;
 							changedCells_y[changedCellsCounter - 1] = i;
@@ -304,7 +308,7 @@ int main()
 			SetConsoleCursorPosition(h, c);
 			printf("%d", allLivingCells);
 
-			if (changedCellsCounter == 0)
+			if (!changedCellsCounter)
 			{
 				c.X = FIELD_WIDTH + 5;
 				c.Y = 2;
