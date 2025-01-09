@@ -167,10 +167,7 @@ int main()
 					break;
 				case KEY_SPACE:
 					if (!field[c.Y - 1][c.X - 1])
-					{
-						SetConsoleCursorPosition(h, c);
 						putchar(' ');
-					}
 					sectoringIsFinished = 1;
 					game = 1;
 					c.X = FIELD_WIDTH + 5;
